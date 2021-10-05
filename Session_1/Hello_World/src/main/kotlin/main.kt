@@ -3,6 +3,12 @@ fun main(){
     println(greetStudents())
 }
 
-fun greetStudents(){
 
+
+fun greetStudents(){
+    val students = arrayOf<String>("Guillaume", "Matthias", "Rayan", "Dries")
+    for (student in students)
+    {
+        println("hello $student,")
+    }
 }
