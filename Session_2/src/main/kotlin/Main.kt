@@ -13,9 +13,37 @@ fun challengeOne(){
 
     if (housesOne.contains(playerChoiceOne)){
         succes()
+        challengeTwo()
     } else{
         gameOver()
     }
+}
+
+fun challengeTwo(){
+    println("For this next task, guess the number the dice rolled, guess wrong and your head will roll")
+    println("Type low if your guess is 1-3, type high if your guess is 4-6")
+
+    val number = rollDice(0)
+    var correctAnswer = ""
+
+    if (number < 4){
+        correctAnswer = "low"
+    } else {
+        correctAnswer = "high"
+    }
+
+    val playerChoiceTwo = readLine()
+
+    if( playerChoiceTwo == correctAnswer){
+        succes()
+    }else{
+        gameOver()
+    }
+}
+
+fun rollDice(number: Int): Int {
+    val dice = arrayOf(1, 2, 3, 4, 5, 6)
+    return dice.random()
 }
 
 fun succes(){
