@@ -32,6 +32,8 @@ fun challengeTwo(){
         correctAnswer = "high"
     }
 
+    println(correctAnswer)
+
     val playerChoiceTwo = readLine()
 
     if( playerChoiceTwo == correctAnswer){
@@ -77,7 +79,31 @@ fun succeeded(){
 }
 
 fun challengeFour(){
-    
+    println("Be quick, the King asked for your help! His brother at the Nightswatch needs help against WhiteWalker that survived the Long Night!")
+    println("The Whitewalker could be reasoned with, but in order for him to stay far beyond the Wall, he asked to guess a number between 1 and 100")
+    println("We tricked him into never losing, but if he lose patience, he will attack! Guess as fast as possible!")
+
+    val number = (1..100).random()
+
+    println(number)
+
+    var playerChoiceFour = readLine()!!.toInt()
+
+    while (playerChoiceFour != number){
+        if (playerChoiceFour < number){
+            println("The number is higher than that")
+            playerChoiceFour = readLine()!!.toInt()
+        } else if (playerChoiceFour > number) {
+            println("The number is lower than that")
+            playerChoiceFour = readLine()!!.toInt()
+        }
+    }
+
+
+
+    if (playerChoiceFour == number){
+        succes()
+    }
 }
 
 fun succes(){
