@@ -36,6 +36,7 @@ fun challengeTwo(){
 
     if( playerChoiceTwo == correctAnswer){
         succes()
+        challengeThree()
     }else{
         gameOver()
     }
@@ -44,6 +45,10 @@ fun challengeTwo(){
 fun rollDice(number: Int): Int {
     val dice = arrayOf(1, 2, 3, 4, 5, 6)
     return dice.random()
+}
+
+fun challengeThree(){
+    
 }
 
 fun succes(){
