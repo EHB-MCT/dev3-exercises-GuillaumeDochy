@@ -103,7 +103,12 @@ fun challengeFour(){
 
     if (playerChoiceFour == number){
         succes()
+        challengeFive()
     }
+}
+
+fun challengeFive(){
+    
 }
 
 fun succes(){
