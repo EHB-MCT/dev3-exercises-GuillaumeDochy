@@ -48,6 +48,35 @@ fun rollDice(number: Int): Int {
 }
 
 fun challengeThree(){
+    println("In this challenge you will face an opponent: The Mountain. Pick a weapon to defeat him")
+    println("Pick wrong and you die, pick right and you win, but pick too weak and you return to the previous challenge")
+    println("Your choices are: sword, axe, spear")
+
+    val playerChoiceThree = readLine()
+
+    when(playerChoiceThree){
+        "sword" -> failed()
+        "axe" -> flee()
+        "spear" -> succeeded()
+    }
+}
+
+fun failed(){
+    println("You died, what idiot would use a sword against The Mountain!")
+    gameOver()
+}
+
+fun flee(){
+    println("You stupid bastard, that's too weak against him! Your punishment is going back to the previous challenge!")
+    challengeTwo()
+}
+
+fun succeeded(){
+    println("Good job defeating The Mountain! On you go to the next challenge")
+    challengeFour()
+}
+
+fun challengeFour(){
     
 }
 
