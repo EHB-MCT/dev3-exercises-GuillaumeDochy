@@ -1,9 +1,7 @@
 fun main(){
-
-    createCourse()
-
-
-
+//    createCourse()
+//    createNemesis()
+    chatRoulette()
 }
 
 fun createCourse(){
@@ -37,4 +35,14 @@ fun createNemesis(){
     dries.talk()
     jens.talk()
     matthias.talk()
+}
+
+fun chatRoulette(){
+    val sam = PersonChat("Sam")
+    val liese = PersonChat("Liese")
+
+    val names = arrayOf(sam, liese)
+    val choice = names.random()
+
+    choice.intro()
 }
