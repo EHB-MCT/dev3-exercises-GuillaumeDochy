@@ -49,3 +49,5 @@ fun chatRoulette(){
     choice.intro()
     choice.talk()
 }
+
+//The private modifier broke the code when I put it in the PersonChat class
