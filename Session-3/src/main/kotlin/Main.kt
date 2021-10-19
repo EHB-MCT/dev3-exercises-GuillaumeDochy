@@ -30,5 +30,11 @@ fun createCourse(){
 }
 
 fun createNemesis(){
-    
+    val dries = Villain("Dries")
+    val jens = Hero("Jens")
+    val matthias = Villain("Matthias")
+
+    dries.talk()
+    jens.talk()
+    matthias.talk()
 }
