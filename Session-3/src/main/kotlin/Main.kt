@@ -46,12 +46,6 @@ fun chatRoulette(){
     val names = arrayOf(sam, bram, pete, bot)
     val choice = names.random()
 
+    choice.intro()
     choice.talk()
-
-    when(choice){
-        sam -> sam.gossip()
-        bram -> bram.funFact()
-        pete -> pete.tellJoke()
-        bot -> bot.intro()
-    }
 }
