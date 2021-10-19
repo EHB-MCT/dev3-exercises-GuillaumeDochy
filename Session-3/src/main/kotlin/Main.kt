@@ -38,11 +38,20 @@ fun main(){
 //}
 
 fun chatRoulette(){
-    val sam = PersonChat("Sam")
-    val liese = PersonChat("Liese")
+    val sam = Student("Sam")
+    val bram = Teacher("Bram")
+    val pete = Comedian("Pete")
+    val bot = ChatBot("Dornaku")
 
-    val names = arrayOf(sam, liese)
+    val names = arrayOf(sam, bram, pete, bot)
     val choice = names.random()
 
-    choice.intro()
+    choice.talk()
+
+    when(choice){
+        sam -> sam.gossip()
+        bram -> bram.funFact()
+        pete -> pete.tellJoke()
+        bot -> bot.intro()
+    }
 }

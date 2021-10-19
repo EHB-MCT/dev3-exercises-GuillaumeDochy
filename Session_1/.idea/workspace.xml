@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feaf0a1c-2b22-48d7-a45a-1ad4380edec9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/PersonChat.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/ChatBot.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/Comedian.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/Student.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/Teacher.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Session-3/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Session-3/src/main/kotlin/PersonChat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Session-3/src/main/kotlin/PersonChat.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

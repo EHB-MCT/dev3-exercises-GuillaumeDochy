@@ -1,6 +1,7 @@
-class PersonChat (val name: String) {
-    fun intro(){
-        println("Hi, my name is $name")
+open class PersonChat (open val name: String) {
+    fun talk(){
+        println("Hi!")
+        println("My name is $name")
 //        println("I love idiots!")
     }
 }
