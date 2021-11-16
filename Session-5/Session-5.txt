@@ -1,0 +1,39 @@
+SELECT productName FROM products
+WHERE productCode = 'S24_3856'
+
+SELECT AVG(buyPrice) FROM products
+
+SELECT COUNT(*) from products
+WHERE productName LIKE '%Ford%'
+
+SELECT productName, MAX(buyPrice) FROM products
+
+SELECT COUNT(productName) FROM products
+WHERE productLine like 'Ships'
+
+SELECT COUNT(customerNumber) FROM orders
+WHERE customerNumber = '328'
+
+SELECT COUNT(*) FROM customers
+LEFT JOIN orders ON orders.customerNumber = customers.customerNumber
+WHERE contactLastName = 'Young' AND contactFirstName = 'Julie'
+
+SELECT COUNT(*) FROM customers
+WHERE creditLimit = '0' AND country = 'USA'
+
+SELECT customers.customerName, AVG(amount) AS average FROM payments
+LEFT JOIN customers ON customers.customerNumber = payments.customerNumber
+GROUP BY payments.customerNumber
+ORDER BY average DESC
+LIMIT 1
+
+SELECT customers.contactLastName, customers.contactFirstName, SUM(amount) FROM payments
+LEFT JOIN customers ON customers.customerNumber = payments. customerNumber
+WHERE customers.contactLastName = 'Brown' AND customers.contactFirstName = 'William' AND payments.paymentDate LIKE '2004%'
+
+SELECT customerName, contactLastName, contactFirstName, salesRepEmployeeNumber FROM customers
+WHERE salesRepEmployeeNumber IS NOT NULL
+
+SELECT customerName, customers.state, offices.officeCode from customers
+LEFT JOIN offices ON offices.state = customers.state
+WHERE customerName = 'The Sharp Gifts Warehouse'
