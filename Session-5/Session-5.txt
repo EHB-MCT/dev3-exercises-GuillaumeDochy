@@ -34,6 +34,8 @@ WHERE customers.contactLastName = 'Brown' AND customers.contactFirstName = 'Will
 SELECT customerName, contactLastName, contactFirstName, salesRepEmployeeNumber FROM customers
 WHERE salesRepEmployeeNumber IS NOT NULL
 
-SELECT customerName, customers.state, offices.officeCode from customers
-LEFT JOIN offices ON offices.state = customers.state
-WHERE customerName = 'The Sharp Gifts Warehouse'
+SELECT customerName, customers.salesRepEmployeeNumber, employees.officeCode, offices.city
+from ((customers
+INNER JOIN employees ON customers.salesRepEmployeeNumber = employees.employeeNumber)
+INNER JOIN offices ON employees.officeCode = offices.officeCode)
+WHERE customers.customerName = 'The Sharp Gifts Warehouse'
