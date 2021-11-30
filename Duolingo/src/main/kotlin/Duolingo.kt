@@ -1,8 +1,7 @@
-class Duolingo{
-    constructor(
-        roundSize: Int = 5,
-        language: String = "english"
-    )
+class Duolingo(
+    val roundSize: Int = 5,
+    val roundLanguage: String = "english"
+){
 
     val words = mutableListOf<Word>(
         Word("candle", "kaars", "english"),
@@ -38,9 +37,14 @@ class Duolingo{
 
     fun play(){
 
-        val numberOfWords = 5;
-        val randomWord = words.shuffled().take(numberOfWords).toMutableSet()
+        val filteredList = words.filter{
+            it.language == roundLanguage
+        }
 
+        val numberOfWords = roundSize;
+        val randomWord = filteredList.shuffled().take(numberOfWords).toMutableSet()
+
+        println("Hello, you have $roundSize words from to translate from $roundLanguage to Dutch today, let's begin!")
 
         while (randomWord.isNotEmpty()){
             val selectedWord = randomWord.random()
@@ -48,12 +52,12 @@ class Duolingo{
             val userAnswer = readLine()
 
             if (selectedWord.translated == userAnswer) {
-                println("Good job !")
+                println("Good job!")
                 randomWord.remove(selectedWord)
             }else{
                 println("False answer. Try again later")
             }
-            println("They are currently " + randomWord.count() + "words left")
+            println("There are currently " + randomWord.count() + " words left.")
         }
     }
 }

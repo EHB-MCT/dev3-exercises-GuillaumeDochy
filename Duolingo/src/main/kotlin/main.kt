@@ -1,5 +1,4 @@
 fun main(){
-    var duolingo = Duolingo()
-
+    var duolingo = Duolingo(5)
     duolingo.play()
 }
