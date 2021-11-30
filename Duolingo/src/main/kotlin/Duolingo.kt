@@ -35,7 +35,6 @@ class Duolingo {
         println("Translate the following words in Dutch:")
 
         val numberOfWords = 5
-
         val randomElements = wordsList.asSequence().shuffled().take(numberOfWords).toList()
 
         val element0 = randomElements[0]
