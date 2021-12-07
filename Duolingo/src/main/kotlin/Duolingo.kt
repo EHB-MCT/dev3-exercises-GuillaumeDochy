@@ -1,50 +1,54 @@
 class Duolingo(
     val roundSize: Int = 5,
-    val roundLanguage: String = "english"
+    val language:String
 ){
 
-    val words = mutableListOf<Word>(
-        Word("candle", "kaars", "english"),
-        Word("bougie", "kaars", "french"),
+    var words = mutableListOf<Word>(
+        EnglishWord("candle", "kaars"),
+        FrenchWord("bougie", "kaars"),
 
-        Word("lightbulb", "lamp", "english"),
-        Word("ampoule", "lamp", "french"),
+        EnglishWord("lightbulb", "lamp"),
+        FrenchWord("ampoule", "lamp"),
 
-        Word("lighter", "aansteker", "english"),
-        Word("briquet", "aansteker", "french"),
+        EnglishWord("lighter", "aansteker"),
+        FrenchWord("briquet", "aansteker"),
 
-        Word("mouse", "muis", "english"),
-        Word("souris", "muis", "french"),
+        EnglishWord("mouse", "muis"),
+        FrenchWord("souris", "muis"),
 
-        Word("safe", "koffer", "english"),
-        Word("coffre", "koffer", "french"),
+        EnglishWord("safe", "koffer"),
+        FrenchWord("coffre", "koffer"),
 
-        Word("hat", "hoed", "english"),
-        Word("chapeau", "hoed", "french"),
+        EnglishWord("hat", "hoed"),
+        FrenchWord("chapeau", "hoed"),
 
-        Word("charger", "lader", "english"),
-        Word("chargeur", "lader", "french"),
+        EnglishWord("charger", "lader"),
+        FrenchWord("chargeur", "lader"),
 
-        Word("car", "auto", "english"),
-        Word("voiture", "auto", "french"),
+        EnglishWord("car", "auto"),
+        FrenchWord("voiture", "auto"),
 
-        Word("wallet", "portemonee", "english"),
-        Word("portefeuille", "portemonee", "french"),
+        EnglishWord("wallet", "portemonee"),
+        FrenchWord("portefeuille", "portemonee"),
 
-        Word("phone", "gsm", "english"),
-        Word("téléphone", "gsm", "french"),
+        EnglishWord("phone", "gsm"),
+        FrenchWord("téléphone", "gsm"),
     )
+
+    init {
+        words = words.filter { it.language == language }.toMutableList()
+    }
 
     fun play(){
 
         val filteredList = words.filter{
-            it.language == roundLanguage
+            it.language == language
         }
 
         val numberOfWords = roundSize;
-        val randomWord = filteredList.shuffled().take(numberOfWords).toMutableSet()
+        val randomWord = filteredList.shuffled().take(roundSize).toMutableSet()
 
-        println("Hello, you have $roundSize words from to translate from $roundLanguage to Dutch today, let's begin!")
+        println("Hello, you have $roundSize words from to translate from $language to Dutch today, let's begin!")
 
         while (randomWord.isNotEmpty()){
             val selectedWord = randomWord.random()
